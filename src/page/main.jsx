@@ -23,8 +23,13 @@ const HaveIBeenPwnedCheck = () => {
         {
           headers: {
             "hibp-api-key": apiKey,
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
           },
+          
         }
+        ,{ crossdomain: true }
+        
       );
       setResult(response.data);
       console.log(result);
